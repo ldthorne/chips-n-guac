@@ -1,0 +1,29 @@
+<section id="home">
+    <div ng-show='successful'>
+        <h4 class='success'>{{successful}}</h4>
+        <br>
+        <br>
+        <img class='images' ng-src='{{successPic}}'>
+    </div>
+    <div ng-show='error'>
+        <h4 class='danger'>{{error}}</h4>
+        <br>
+        <br>
+        <img class='images' ng-src='{{errorPic}}'>
+    </div>
+    <form class="simple-form" name='form' ng-show="!submitted">
+        <div class='form-group'>
+            <label for="inputFirst">First Name</label>
+            <input class='form-control' type="text" placeholder='Your name here' ng-required='true' ng-model="user.firstName" id='inputFirst' />
+        </div>
+        <div class='form-group'>
+            <label for="inputLast">Last Name</label>
+            <input class='form-control' type="text" placeholder='Your name here' ng-required='true' ng-model="user.lastName" id='inputLast' />
+        </div>
+        <div class='form-group'>
+            <label for="inputPhone">Phone Number</label>
+            <input class='form-control' type="tel" placeholder='Phone number (no dashes)' ng-required='true' ng-minlength="10" ng-maxlength="10" ng-required='true' ng-model="user.phone" id='inputPhone' />
+        </div>
+        <input class='btn' ng-disabled="form.$invalid" type="submit" ng-click="send(user)" value="Submit" />
+    </form>
+</section>

@@ -1,0 +1,60 @@
+body {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #b0ca2a;
+    background-image: url('/chip.png') 
+}
+
+#home {
+	background: rgba(211,211,211,.7);
+	width: 40%;
+	margin: auto;
+	border-radius: 5px;
+	padding: 20px 0px;
+    fullstack-logo {
+        padding-top: 30px;
+        width: 150px;
+        margin: 0 auto;
+    }
+    h1 {
+        margin-top: 40px;
+        text-align: center;
+    }
+
+}
+
+#aboutDiv {
+    background: rgba(211,211,211,.8);
+    width: 60%;
+    margin: auto;
+    border-radius: 5px;
+    padding: 20px 0px;
+}
+
+form {
+    width: 80%;
+    margin: auto;
+}
+
+.success {
+    width: 60%;
+    text-align: center;
+    margin: auto;
+    white-space: pre-wrap;
+}
+
+.danger {
+    width: 60%;
+    color: red;
+    text-align: center;
+    margin: auto;
+    white-space: pre-wrap;
+
+}
+.images {
+	margin-left: 40%;
+	width: 20%;
+}
+
+.btn {
+	background: #b0ca2a;
+}
