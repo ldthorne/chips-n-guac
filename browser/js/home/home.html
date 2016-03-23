@@ -22,7 +22,7 @@
         </div>
         <div class='form-group'>
             <label for="inputPhone">Phone Number</label>
-            <input class='form-control' type="tel" placeholder='Phone number (no dashes)' ng-required='true' ng-minlength="10" ng-maxlength="10" ng-required='true' ng-model="user.phone" id='inputPhone' />
+            <input class='form-control' type="tel" placeholder='Phone number (no dashes)' ng-required='true' ng-required='true' ng-model="user.phone" id='inputPhone' />
         </div>
         <input class='btn' ng-disabled="form.$invalid" type="submit" ng-click="send(user)" value="Submit" />
     </form>
