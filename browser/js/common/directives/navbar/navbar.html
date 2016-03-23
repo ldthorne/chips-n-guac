@@ -1,10 +1,14 @@
 <nav class="navbar navbar-static-top">
     <div class="container">
-        <div class="navbar-header">
-            <chips-logo></chips-logo>
-        </div>
         <ul class="nav navbar-nav">
-            <li ng-repeat="item in items" ng-show="!item.auth || isLoggedIn()">
+            <li id='header'>
+                <div class="navbar-header">
+                    <chips-logo></chips-logo>
+                </div>
+            </li>
+        </ul>
+        <ul class="navs nav navbar-nav">
+            <li  ng-repeat="item in items" ng-show="!item.auth || isLoggedIn()">
                 <a ui-sref-active="active" ui-sref="{{ item.state }}">{{ item.label }}</a>
             </li>
         </ul>

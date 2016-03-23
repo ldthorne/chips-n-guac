@@ -1,5 +1,7 @@
 navbar {
-
+  ul { 
+    float: left;
+  }
   display: block;
   background: white;
   border-bottom: 1px solid black;
@@ -17,11 +19,22 @@ navbar {
     width: 40px;
   }
 
+  #header {
+    float: left;
+  }
+
+  .navs {
+    float: right;
+  }
+
+
   a {
     color: black;
     font-size: 16px;
   }
-
+  .nav > li {
+    display: inline-block;
+  }
   .nav > li > a {
     cursor: pointer;
     transition: color 0.2s;
@@ -34,28 +47,6 @@ navbar {
     }
     &:focus {
       background: none;
-    }
-  }
-
-  .login-button {
-    float: right;
-    border: 1px solid black;
-    margin-top: 10px;
-    background: none;
-    outline: none !important;
-  }
-
-  .welcome {
-    float: right;
-    margin-top: 12px;
-    span {
-      color: black;
-      font-size: 16px;
-      margin-right: 5px;
-    }
-    a {
-      color: #f30046;
-      cursor: pointer;
     }
   }
 
