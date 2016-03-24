@@ -4,3 +4,7 @@ npm-debug.log
 public
 .DS_Store
 coverage
+server.crt
+server.csr
+server.key
+server.pass.key
