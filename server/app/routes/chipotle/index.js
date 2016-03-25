@@ -46,8 +46,7 @@ router.post('/', function (req, res) {
       },
       data: '{"f":"' + fName + '","l":"' + lName + '","m":"' + phoneNumber + '","s":"true","z":"10065"}'
     }
-    const fullName = fName + ' ' + lName;
-    User.create({ name: fullName, phone: phoneNumber })
+    User.create({ name: fName })
       .then(function (user) {
         return promisifiedCurl(options)
       }).then( response => {
