@@ -32,26 +32,40 @@ router.post('/', function (req, res) {
     return;
   } else {
     phoneNumber = phoneNumber[0].slice(2);
+    const data = {
+      f: fName,
+      l: lName,
+      m: phoneNumber,
+      s: "false",
+      z: "10065"
+    }
     const options = {
-      url: 'http://api.guachunter.com/guac-it-out/reg',
+      url: 'https://api-proxy.chipotle.com/guacsmash/reg',
       headers: {
-        'Origin': 'http://www.guachunter.com',
-        'Accept-Encoding': 'gzip, deflate',
+        'Accept': 'application/json',
+        'Accept-Encoding': 'gzip, deflate, br',
         'Accept-Language': 'en-US,en;q=0.8',
-        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/48.0.2564.116 Chrome/48.0.2564.116 Safari/537.36',
-        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-        'Accept': '*/*',
-        'Referer': 'http://www.guachunter.com/',
-        'Connection': 'keep-alive'
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive',
+        'Content-Type': 'application/json',
+        'Host': 'api-proxy.chipotle.com',
+        'Origin': 'https://cado-crusher.chipotle.com',
+        'Pragma': 'no-cache',
+        'Referer': 'https://cado-crusher.chipotle.com/',
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.95 Safari/537.36',
+        'Referer': 'http://www.guachunter.com/'
       },
-      data: '{"f":"' + fName + '","l":"' + lName + '","m":"' + phoneNumber + '","s":"true","z":"10065"}'
+      data: JSON.stringify(data)
     }
     User.create({ name: fName })
       .then(function (user) {
+        console.log(options)
         return promisifiedCurl(options)
       }).then( response => {
+        console.log(response);
         res.status(200).send();
       }).then( null, err => {
+        console.log(err)
         res.status(500).send(err)
       })
   }
